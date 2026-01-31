@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="溫暖又富有人性的核醫 - 提供專業核醫檢查與治療服務">
+  <title>溫暖又富有人性的核醫 | 核醫</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand">溫暖又富有人性的核醫</a>
+      <button class="nav__toggle" id="navToggle" aria-label="選單">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#about" class="nav__link">關於核醫</a></li>
+        <li><a href="#facilities" class="nav__link">環境設施</a></li>
+        <li><a href="#faq" class="nav__link">常見問題</a></li>
+        <li><a href="#services" class="nav__link">服務項目</a></li>
+        <li><a href="#gallery" class="nav__link">圖庫</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero__bg" style="background-image: url('oldweb/hero-bg.jpg')"></div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="display-title hero__title">溫暖又富有人性</h1>
+        <p class="hero__subtitle">您看看這四個人笑得多開心，因為他們還沒被打 Persantin</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about__grid" data-animate>
+          <div class="about__image">
+            <img src="oldweb/about-intro.jpg" alt="核醫科環境" loading="lazy">
+          </div>
+          <div class="about__content">
+            <span class="eyebrow">Nuclear Medicine</span>
+            <h2 class="section-title">核醫</h2>
+            <p class="section-subtitle">
+              「核醫學？就是拿點放射性的東西給你灌輸，然後看看你身體裡到底發生了啥子鬼！是不是器官出了差錯，還是血液在跳舞？病情啊，一查就知道！治療進度？那當然是指導你從這段放射的旅程中走出來！哇，癌症啊，甲狀腺亢進啊，通通都逃不過我的放射魔法！」
+            </p>
+            <a href="#services" class="btn btn--primary" style="margin-top: 24px;">查看服務項目</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="section section--cream">
+      <div class="container">
+        <div class="facilities__grid" data-animate>
+          <div class="facilities__content">
+            <span class="eyebrow">Facilities</span>
+            <h2 class="section-title">環境設施</h2>
+            <p class="section-subtitle">核醫學使用的主要儀器包括以下幾種：</p>
+            <ul>
+              <li><strong>單光子放射電腦斷層掃描（SPECT）</strong><br>常用的核醫學影像學技術，通過檢測放射性同位素的放射線產生三維影像。SPECT
+                可以提供器官和組織的功能信息，用於評估心臟、骨骼和腦部等部位的功能。</li>
+              <li><strong>正子發射斷層攝影（PET）</strong><br>高分辨率核醫學成像技術，使用放射性同位素追蹤標記的生物分子（如 FDG），用於偵測和評估癌症、心臟病和神經系統疾病。</li>
+              <li><strong>電腦斷層攝影（CT）</strong><br>有時核醫學檢查會與 CT 結合使用，稱為 SPECT/CT 或 PET/CT，提供更全面的結構和功能信息。</li>
+            </ul>
+          </div>
+          <div class="carousel" id="carousel">
+            <div class="carousel__track" id="carouselTrack">
+              <div class="carousel__slide"><img src="oldweb/facility-spect.jpg" alt="SPECT設備" loading="lazy"></div>
+              <div class="carousel__slide"><img src="oldweb/facility-pet.jpg" alt="PET/CT設備" loading="lazy"></div>
+              <div class="carousel__slide"><img src="oldweb/facility-room.jpg" alt="掃描室" loading="lazy"></div>
+              <div class="carousel__slide"><img src="oldweb/facility-waiting.jpg" alt="等候區" loading="lazy"></div>
+            </div>
+            <div class="carousel__controls">
+              <button class="carousel__btn" onclick="moveCarousel(-1)">‹</button>
+              <div class="carousel__dots" id="carouselDots"></div>
+              <button class="carousel__btn" onclick="moveCarousel(1)">›</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">FAQ</span>
+          <h2 class="section-title">常見問題</h2>
+          <p class="section-subtitle">在這裡，您可以找到最常見問題的答案。如果您有任何疑問或擔憂，請隨時與我們的醫療團隊聯繫。</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-image">
+            <img src="oldweb/faq-side.jpg" alt="核醫檢查示意圖" onclick="openImageModal(this.src)" style="cursor: pointer;"
+              loading="lazy">
+          </div>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">核醫檢查會痛嗎？<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer__inner">檢查過程中唯一可能的不適是注射時的輕微刺痛感，整個掃描過程是無痛的。放射性物質不會讓您感到任何不同，您只需要躺著保持靜止即可。</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">放射性物質會影響健康嗎？<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer__inner">使用的放射性物質劑量很低，對身體的影響極小，且在幾天內會自然排出體外。核醫檢查的輻射劑量通常與普通 X 光檢查相當或更低。</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">檢查需要多長時間？<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer__inner">根據檢查類型不同，通常需要2-4小時，其中包括等待藥物分佈的時間。部分檢查如鎵-67掃描需要2-3天才能完成所有影像拍攝。</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">檢查前需要特別準備嗎？<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer__inner">視檢查類型而定。部分檢查需要空腹6小時以上，有些需要停用特定藥物。詳細準備事項請參考各服務項目說明或諮詢醫護人員。</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">檢查後有什麼注意事項？<span class="faq-icon">+</span></button>
+              <div class="faq-answer">
+                <div class="faq-answer__inner">若腎功能正常，建議多喝水多排尿，有助於排出體內殘留的放射性物質。大部分檢查完成後可以正常飲食和活動。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section--dark">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Services</span>
+          <h2 class="section-title">提供的服務項目</h2>
+          <p class="section-subtitle" style="color: rgba(255,255,255,0.8);">核醫檢查與治療項目</p>
+        </div>
+        <p class="services-intro">「在核醫的世界裡，放射性同位素是我們的魔法藥水，透過它，我們可以探索身體的奧秘，猜測細胞的神秘舞蹈，讓疾病無所遁形！」</p>
+
+        <div class="services-grid">
+          <a href="javascript:void(0)" onclick="openModal('fdg-pet')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">FDG 正子掃描<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">高精度的影像學檢查，用於檢測和評估體內的代謝活動。這項檢查在腫瘤學、神經科學和心臟病學中有著廣泛應用。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('bone-scan')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">骨骼掃描檢查<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">用於評估骨骼系統的健康狀況。這項檢查可以檢測到多種骨骼異常，如骨折、感染、腫瘤及其他骨病變。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('ra-223')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">鐳-223治療<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">鐳-223是一種用於治療骨轉移性前列腺癌的放射性藥物。它能夠針對癌細胞在骨骼中的活性部位。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('gallium-67')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">鎵-67炎症/腫瘤掃描<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">檢測和評估體內炎症或腫瘤的存在和擴散情況。這項檢查對於診斷某些感染性疾病、炎症性疾病以及腫瘤非常有用。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('lymph-scintigraphy')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">淋巴攝影<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">評估淋巴系統的狀況。這項檢查特別有助於檢查淋巴結的功能、檢測淋巴引流路徑、以及診斷和評估淋巴管阻塞。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('myocardial-perfusion')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">心肌灌注掃描<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">用於評估心臟肌肉的血流分佈。這項檢查有助於診斷冠狀動脈疾病、評估心肌梗塞後的心肌損傷及檢查心臟功能。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('i-131')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">放射性碘-131治療<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">主要用於治療甲狀腺疾病，如甲狀腺功能亢進（甲亢）和甲狀腺癌。碘-131能夠被甲狀腺細胞攝取，選擇性地破壞病變組織。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('renal-scan')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">腎臟掃描<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">用於評估腎臟的功能和結構。這項檢查對於診斷和評估腎臟疾病、腎功能不全以及尿路阻塞等問題非常有用。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('renal-cortical')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">腎臟皮質攝影<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">利用放射性同位素 Tc-99m DMSA 進行的核醫學檢查，用於評估腎臟皮質的結構和功能。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('thyroid-scan')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">鎝-99m 甲狀腺掃描<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">用於評估甲狀腺的形態和功能。有助於診斷甲狀腺結節、甲狀腺功能亢進（甲亢）或甲狀腺功能低下（甲低）等疾病。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('salivary-gland')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">唾液腺掃描<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">用於評估唾液腺的功能和結構。通常用於診斷各種風溼免疫疾病等造成的口乾燥症、接受頭頸部放射治療後的唾液腺功能障礙。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('parathyroid')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">副甲狀腺掃描<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">用於評估副甲狀腺的功能和結構。主要用於診斷和定位副甲狀腺腺瘤、增生或異常活動的副甲狀腺組織。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('trodat-1')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">腦部多巴神經元斷層造影<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">專門用於評估腦部多巴胺神經元的功能狀況。對於診斷和監測帕金森病及其他相關神經退行性疾病具有重要意義。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('cerebral-perfusion')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">腦灌注檢查<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">用於評估腦部血流狀況。透過這項檢查，可以了解腦部各區域的血液供應情況，有助於診斷腦血管疾病、癲癇、痴呆等疾病。</p>
+            </div>
+          </a>
+
+          <a href="javascript:void(0)" onclick="openModal('adrenal-cortex')" class="service-card">
+            <div class="service-card__content">
+              <h3 class="service-card__title">腎上腺皮質顯像<svg viewBox="0 0 20 20">
+                  <path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none" />
+                </svg></h3>
+              <p class="service-card__desc">使用碘-131標記的膽固醇（I-131 NP-59），能夠幫助醫師評估腎上腺皮質的形態和功能。</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Gallery</span>
+          <h2 class="section-title">圖庫</h2>
+          <p class="section-subtitle">豐富的動物</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item wide"><img src="oldweb/gallery-01.jpg" alt="圖庫1" loading="lazy"></div>
+          <div class="gallery-item"><img src="oldweb/gallery-02.jpg" alt="圖庫2" loading="lazy"></div>
+          <div class="gallery-item tall"><img src="oldweb/gallery-03.jpg" alt="圖庫3" loading="lazy"></div>
+          <div class="gallery-item"><img src="oldweb/gallery-04.jpg" alt="圖庫4" loading="lazy"></div>
+          <div class="gallery-item"><img src="oldweb/gallery-05.jpg" alt="圖庫5" loading="lazy"></div>
+          <div class="gallery-item wide"><img src="oldweb/gallery-06.jpg" alt="圖庫6" loading="lazy"></div>
+          <div class="gallery-item"><img src="oldweb/gallery-07.jpg" alt="圖庫7" loading="lazy"></div>
+          <div class="gallery-item"><img src="oldweb/gallery-08.jpg" alt="圖庫8" loading="lazy"></div>
+          <div class="gallery-item tall"><img src="oldweb/gallery-09.jpg" alt="圖庫9" loading="lazy"></div>
+          <div class="gallery-item wide"><img src="oldweb/gallery-10.jpg" alt="圖庫10" loading="lazy"></div>
+          <div class="gallery-item"><img src="oldweb/gallery-11.jpg" alt="圖庫11" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">溫暖又富有人性的核醫</div>
+      <div class="footer__links">
+        <a href="#about" class="footer__link">關於核醫</a>
+        <a href="#facilities" class="footer__link">環境設施</a>
+        <a href="#services" class="footer__link">服務項目</a>
+        <a href="#faq" class="footer__link">常見問題</a>
+      </div>
+      <p class="footer__copy">無聊做的核醫衛教網站 by Huang Chun-Yin © 2026/01</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Navigation
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    const nav = document.getElementById('nav');
+
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.nav__link').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Nav scroll effect
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        document.querySelectorAll('.faq-item').forEach(i => {
+          if (i !== item) i.classList.remove('open');
+        });
+        item.classList.toggle('open');
+      });
+    });
+
+    // Carousel
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel__slide');
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+
+    // Create dots
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel__dot' + (i === 0 ? ' active' : '');
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    });
+
+    function goToSlide(n) {
+      currentSlide = n;
+      track.style.transform = `translateX(-${n * 100}%)`;
+      document.querySelectorAll('.carousel__dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === n);
+      });
+    }
+
+    function moveCarousel(dir) {
+      let next = currentSlide + dir;
+      if (next < 0) next = slides.length - 1;
+      if (next >= slides.length) next = 0;
+      goToSlide(next);
+    }
+
+    // Auto play carousel
+    setInterval(() => moveCarousel(1), 5000);
+
+    // Animate on scroll
+    const animateElements = document.querySelectorAll('[data-animate]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    animateElements.forEach(el => observer.observe(el));
+  </script>
+
+  <!-- Modal Structure -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <button class="modal__close" onclick="closeModal()" aria-label="關閉">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="modal__header">
+        <h3 class="modal__title" id="modalTitle">標題</h3>
+        <p class="modal__desc" id="modalDesc">描述</p>
+      </div>
+      <div class="modal__content" id="modalContent">
+        <!-- Content injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Data & Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Services Data
+      const servicesData = {
+        'fdg-pet': {
+          title: 'FDG 正子掃描',
+          desc: '高精度的影像學檢查，用於檢測和評估體內的代謝活動。',
+          content: `
+        <h2>檢查的目的</h2>
+        <ul>
+          <li>檢測和定位癌症及其轉移情況</li>
+          <li>評估治療的效果</li>
+          <li>檢查腫瘤的代謝活性</li>
+          <li>診斷某些神經系統疾病（如癲癇、阿茲海默病）</li>
+          <li>評估心肌存活情況</li>
+        </ul>
+        <h2>檢查的原理</h2>
+        <p>FDG-PET 掃描使用放射性標記的葡萄糖（18F-氟脫氧葡萄糖，簡稱 18F-FDG）。這種放射性物質會被體內代謝活躍的細胞吸收，如癌細胞。正子掃描會捕捉 18F-FDG 發出的放射線信號，從而生成體內代謝活動的影像。</p>
+        <h2>檢查前的準備</h2>
+        <ul>
+          <li>檢查前至少空腹 6 小時（不可進食任何食物，包括口香糖和檳榔），僅能喝白開水</li>
+          <li>檢查前 6 小時也應避免給予任何含有熱量的靜脈輸液，只能給予生理食鹽水</li>
+          <li>患者應告知醫生正在服用的所有藥物，特別是降糖藥物</li>
+          <li>檢查前 24 小時內應避免劇烈運動</li>
+          <li>檢查當天應穿著寬鬆舒適的衣物</li>
+        </ul>
+        <h2>檢查過程</h2>
+        <ul>
+          <li>注射 FDG：放射師會將放射性標記的 FDG 注射到靜脈中，注射時可能會有輕微的刺痛感</li>
+          <li>等待分佈：FDG 需要時間在體內分佈並被細胞吸收，這通常需要約一小時。等待期間患者需保持靜止和放鬆</li>
+          <li>拍攝影像：注射藥物約一小時後，患者將躺在正子掃描儀內拍攝全身影像，約需 30-50 分鐘</li>
+          <li>延遲影像：在注射 90-120 分鐘後，視情況照第二次延遲影像</li>
+        </ul>
+        <h2>檢查後的注意事項</h2>
+        <ul>
+          <li>若腎功能正常，建議多喝水多排尿，有助於排出體內殘留的放射性物質</li>
+          <li>如有任何不適，應立即聯繫醫護人員</li>
+          <li>檢查結果通常需數天時間分析，您的開單醫生會根據影像結果給予診斷和建議</li>
+        </ul>
+      `
+        },
+        'bone-scan': {
+          title: '骨骼掃描檢查',
+          desc: '用於評估骨骼系統的健康狀況。可以檢測到多種骨骼異常。',
+          content: `
+        <h2>檢查的目的</h2>
+        <ul>
+          <li>檢測骨折或應力性骨折</li>
+          <li>評估骨骼感染（如骨髓炎）</li>
+          <li>發現骨骼中的腫瘤或轉移癌</li>
+          <li>評估骨質疏鬆症或其他骨骼疾病</li>
+          <li>監測某些治療效果</li>
+        </ul>
+        <h2>檢查的原理</h2>
+        <p>骨骼掃描使用放射性同位素標記的藥物（通常是鎝-99m 標記的甲基二膦酸鹽，Tc-99m MDP）。這種放射性物質注射入體內後會集中在骨骼活動較高的部位，如受損或病變的骨組織。伽瑪攝影機會捕捉這些放射性信號，生成骨骼的影像。</p>
+        <h2>檢查前的準備</h2>
+        <ul>
+          <li>預約檢查時間：檢查需提前預約，並按約定時間準時到達</li>
+          <li>此項檢查不需特別空腹</li>
+        </ul>
+        <h2>檢查過程</h2>
+        <ul>
+          <li>注射放射性藥物：放射師會將放射性藥物注射到靜脈中。注射時可能會有輕微的刺痛感</li>
+          <li>等待分佈：藥物需要時間在骨骼中分佈，通常等待 2-4 小時。等待期間建議多喝水並排空膀胱</li>
+          <li>拍攝影像：患者將躺在檢查床上，伽瑪攝影機會在全身或特定區域拍攝影像，約需 30-60 分鐘</li>
+        </ul>
+      `
+        },
+        'ra-223': {
+          title: '鐳-223治療',
+          desc: '用於治療骨轉移性前列腺癌的放射性藥物。',
+          content: `
+        <h2>治療原理</h2>
+        <p>鐳-223 模仿鈣離子在骨骼中的行為，能夠優先積聚在骨轉移病灶部位，釋放α粒子直接破壞癌細胞的 DNA 結構，從而抑制腫瘤生長和緩解疼痛。</p>
+        <h2>治療準備</h2>
+        <ul>
+          <li>預約治療時間：由於鐳-223 具有短半衰期，且藥物於國外生產，治療需要提前預約並確保當日準時到達</li>
+          <li>檢查評估：治療前需要進行血液檢查，以確保患者適合接受治療</li>
+        </ul>
+        <h2>常見問題</h2>
+        <ul>
+          <li><strong>治療需要幾次？</strong> — 根據治療指引，需要每 4 週一次，共 6 次療程</li>
+        </ul>
+      `
+        },
+        'gallium-67': {
+          title: '鎵-67炎症/腫瘤掃描',
+          desc: '檢測和評估體內炎症或腫瘤的存在和擴散情況。',
+          content: `
+        <h2>檢查的目的</h2>
+        <ul>
+          <li>檢測和定位體內的炎症或感染部位</li>
+          <li>評估腫瘤的存在和擴散情況</li>
+          <li>監測治療的效果</li>
+        </ul>
+        <h2>檢查的原理</h2>
+        <p>鎵-67 是一種放射性同位素，注射後會被體內的炎症或腫瘤組織吸收。伽瑪相機會捕捉鎵-67 發出的放射性信號，從而生成影像，顯示出炎症或腫瘤的分佈情況。</p>
+        <h2>檢查前的準備</h2>
+        <ul>
+          <li>預約檢查時間：檢查需提前預約，並按約定時間準時到達</li>
+          <li>此項檢查不需特別空腹</li>
+        </ul>
+      `
+        },
+        'lymph-scintigraphy': {
+          title: '淋巴攝影',
+          desc: '評估淋巴系統的狀況。這項檢查特別有助於檢查淋巴結的功能、檢測淋巴引流路徑。',
+          content: `
+        <h2>檢查的目的</h2>
+        <ul>
+          <li>評估淋巴結的功能和狀況</li>
+          <li>確定淋巴引流路徑</li>
+          <li>診斷淋巴管阻塞或淋巴水腫</li>
+          <li>幫助腫瘤手術中的前哨淋巴結定位</li>
+        </ul>
+        <h2>檢查的原理</h2>
+        <p>這項檢查使用放射性同位素 Tc-99m Phytate。放射性同位素會被注射到皮下組織，隨著淋巴液流動，並最終集中於淋巴結。</p>
+      `
+        },
+        'myocardial-perfusion': {
+          title: '心肌灌注掃描',
+          desc: '用於評估心臟肌肉的血流分佈。',
+          content: `
+        <h2>檢查的目的</h2>
+        <ul>
+          <li>診斷冠狀動脈疾病</li>
+          <li>評估心肌梗塞後的損傷</li>
+          <li>術前風險評估</li>
+        </ul>
+        <h2>檢查的原理</h2>
+        <p>使用放射性同位素（鉈-201 或 Tc-99m Sestamibi），注射後會隨血液流動，主要聚集在血流正常的心肌部位。</p>
+        <h2>檢查過程（請自行準備米漿或茶葉蛋兩份）</h2>
+        <ul>
+          <li><strong>靜息掃描</strong>：患者在靜息狀態下注射放射性藥物，等待約 30-60 分鐘讓放射性物質分佈於心肌（等待過程需吃或喝點米漿或茶葉蛋），然後拍攝心臟靜息影像</li>
+          <li><strong>運動或藥物負荷掃描</strong>：患者進行運動負荷（如跑步機）或接受藥物（如 Dipyridamole）狀態下再次注射放射性藥物，等待後拍攝心臟負荷影像</li>
+        </ul>
+      `
+        },
+        'i-131': {
+          title: '放射性碘-131治療',
+          desc: '主要用於治療甲狀腺功能亢進（甲亢）和甲狀腺癌。',
+          content: `
+        <h2>治療準備</h2>
+        <ul>
+          <li>懷孕注意：女性病患若有懷孕的可能或準備懷孕，不建議進行碘-131治療</li>
+          <li>停藥要求：治療前需停用甲狀腺素藥物一個月（4週），確保體內甲狀腺刺激素（TSH）大於 30μIU/ml</li>
+          <li>避免含碘對比劑：服用碘-131治療前三個月內，不能接受含碘對比劑的檢查</li>
+          <li>低碘飲食：治療前 2-4 週開始採取低碘飲食</li>
+        </ul>
+        <h2>治療後注意事項</h2>
+        <ul>
+          <li>出院後三至四週內避免和小孩、孕婦親密接觸（至少一公尺距離）</li>
+          <li>治療後二至三週內勿與家人共用碗筷</li>
+        </ul>
+      `
+        },
+        'renal-scan': {
+          title: '腎臟掃描',
+          desc: '用於評估腎臟的功能和結構。',
+          content: `
+        <h2>檢查的目的</h2>
+        <ul>
+          <li>評估腎臟的血流量和功能</li>
+          <li>檢查腎臟形態和大小</li>
+          <li>檢測和定位尿路阻塞</li>
+          <li>評估腎移植後的功能</li>
+        </ul>
+        <h2>檢查的原理</h2>
+        <p>腎臟掃描使用放射性同位素標記的藥物（如 Tc-99m DTPA 或 Tc-99m MAG3）。這些放射性藥物會通過血液流入腎臟，然後被腎臟過濾和排出體外。</p>
+      `
+        },
+        'renal-cortical': {
+          title: '腎臟皮質攝影',
+          desc: '利用放射性同位素 Tc-99m DMSA 進行的核醫學檢查，用於評估腎臟皮質的結構和功能。',
+          content: `
+        <h2>檢查的目的</h2>
+        <ul>
+          <li>評估腎臟皮質的結構異常，如瘢痕或發育不良</li>
+          <li>檢查腎臟感染（如腎盂腎炎）後的損傷及治療後之追蹤評估</li>
+        </ul>
+        <h2>可能的檢查結果</h2>
+        <ul>
+          <li><strong>正常結果</strong>：顯示腎臟皮質結構正常，無異常累積</li>
+          <li><strong>異常結果</strong>：可能顯示腎臟皮質結構異常，如瘢痕、損傷或發育不良</li>
+          <li><strong>分腎功能計算</strong>：每個腎臟的功能比例會被計算出來，例如左腎功能佔 60%，右腎功能佔 40%</li>
+        </ul>
+      `
+        },
+        'thyroid-scan': {
+          title: '鎝-99m 甲狀腺掃描',
+          desc: '用於評估甲狀腺的形態和功能。',
+          content: `
+        <h2>檢查原理</h2>
+        <p>鎝-99m（Tc-99m）是一種放射性同位素，當它被注射到體內後，會選擇性地聚集在甲狀腺組織中，釋放γ射線。通過伽瑪相機可以捕捉這些射線並生成甲状腺的影像。</p>
+        <h2>檢查準備</h2>
+        <ul>
+          <li>預約檢查時間：檢查需提前預約</li>
+          <li>此項檢查不需特別空腹</li>
+        </ul>
+      `
+        },
+        'salivary-gland': {
+          title: '唾液腺掃描',
+          desc: '用於評估唾液腺的功能和結構。',
+          content: `
+        <h2>檢查原理</h2>
+        <p>唾液腺掃描使用放射性同位素（如鎝-99m 標記的過氯酸鹽，Tc-99m pertechnetate）。當放射性藥物注射入體內後，會迅速被唾液腺攝取並釋放γ射線。利用伽瑪相機捕捉這些射線，生成唾液腺的影像。</p>
+        <h2>檢查準備</h2>
+        <ul>
+          <li>預約檢查時間：檢查需提前預約</li>
+          <li>檢查當日，攜帶無籽酸梅</li>
+          <li>檢查前會請您適量飲水</li>
+        </ul>
+      `
+        },
+        'parathyroid': {
+          title: '副甲狀腺掃描',
+          desc: '用於評估副甲狀腺的功能和結構。主要用於診斷和定位副甲狀腺腺瘤。',
+          content: `
+        <h2>檢查原理</h2>
+        <p>副甲狀腺掃描使用放射性同位素（如 Tc-99m MIBI）作為示蹤劑，注射入體內後，示蹤劑會被副甲狀腺組織吸收並釋放γ射線。利用伽瑪相機捕捉這些射線，生成副甲狀腺的影像。</p>
+        <h2>檢查準備</h2>
+        <ul>
+          <li>預約檢查時間：檢查需提前預約</li>
+          <li>此項檢查不需特別空腹</li>
+        </ul>
+      `
+        },
+        'trodat-1': {
+          title: '腦部多巴神經元斷層造影',
+          desc: '專門用於評估腦部多巴胺神經元的功能狀況。',
+          content: `
+        <h2>檢查原理</h2>
+        <p>鎝-99m TRODAT-1 是一種標記多巴胺轉運體的放射性藥物。透過單光子發射電腦斷層掃描（SPECT），可以生成腦部多巴胺神經元的三維影像。</p>
+        <h2>檢查前需停用之藥物</h2>
+        <p>檢查前需停用會干擾多巴胺影像之藥物：Cocaine(2天), Amfetamine(7天), Methylamfetamine(3天), Methylphenidate(2天), Dexamfetamine(7天), Mazindol(3天), Phentermine(14天), Modafinil(3天), Bupropion(8天), Benzatropine(5天)。</p>
+      `
+        },
+        'cerebral-perfusion': {
+          title: '腦灌注檢查',
+          desc: '用於評估腦部血流狀況。',
+          content: `
+        <h2>檢查的目的</h2>
+        <ul>
+          <li>評估腦部各區域的血流量分佈</li>
+          <li>診斷腦血管疾病（如中風、短暫性腦缺血發作）</li>
+          <li>定位癲癇發作病灶</li>
+          <li>早期診斷和評估痴呆症（如阿茲海默病）</li>
+          <li>評估腦部外傷後的血流變化</li>
+        </ul>
+        <h2>檢查的原理</h2>
+        <p>腦灌注檢查使用放射性同位素（如 Tc-99m HMPAO 或 Tc-99m ECD），這些藥物能夠穿過血腦屏障，並根據腦部各區域的血流量分佈。伽瑪相機會捕捉這些放射性物質的分佈，生成腦部血流的三維影像。</p>
+      `
+        },
+        'adrenal-cortex': {
+          title: '腎上腺皮質顯像',
+          desc: '使用碘-131標記的膽固醇（I-131 NP-59），能夠幫助醫師評估腎上腺皮質的形態和功能。',
+          content: `
+        <h2>檢查的目的</h2>
+        <ul>
+          <li>診斷和定位腎上腺皮質腺瘤</li>
+          <li>評估腎上腺皮質功能亢進</li>
+          <li>區分腎上腺皮質增生和腺瘤</li>
+          <li>評估庫欣氏症候群（Cushing's syndrome）的病因</li>
+        </ul>
+        <h2>檢查的原理</h2>
+        <p>碘-131標記的膽固醇會被腎上腺皮質細胞攝取，因為膽固醇是製造腎上腺皮質激素的原料。通過伽瑪相機捕捉放射線，可以生成腎上腺的影像，反映腎上腺皮質的功能狀態。</p>
+      `
+        }
+      };
+
+      const modalOverlay = document.getElementById('modalOverlay');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalDesc = document.getElementById('modalDesc');
+      const modalContent = document.getElementById('modalContent');
+      const body = document.body;
+      const modal = document.querySelector('.modal');
+
+      // Build Gallery from DOM
+      // Fix: Select .gallery-item container to capture clicks (previously blocked by overlay)
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img').src);
+      let currentGalleryIndex = 0;
+
+      // Attach click events dynamically
+      galleryItems.forEach((item, index) => {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', () => openGalleryModal(index));
+      });
+
+      window.openModal = function (id) {
+        const data = servicesData[id];
+        if (!data) return;
+
+        modalTitle.textContent = data.title;
+        modalDesc.textContent = data.desc;
+        modalContent.innerHTML = data.content;
+
+        modalTitle.style.display = '';
+        modalDesc.style.display = '';
+        modal.classList.remove('modal--image');
+
+        modalOverlay.classList.add('active');
+        body.style.overflow = 'hidden';
+      }
+
+      window.openImageModal = function (src) {
+        modalTitle.style.display = 'none';
+        modalDesc.style.display = 'none';
+        modalContent.innerHTML = `<img src="${src}" alt="Image" style="max-height:85vh; max-width:100%; object-fit:contain;">`;
+        modal.classList.add('modal--image');
+
+        modalOverlay.classList.add('active');
+        body.style.overflow = 'hidden';
+      }
+
+      function openGalleryModal(index) {
+        currentGalleryIndex = index;
+        updateGalleryContent();
+
+        modalTitle.style.display = 'none';
+        modalDesc.style.display = 'none';
+        modal.classList.add('modal--image');
+
+        modalOverlay.classList.add('active');
+        body.style.overflow = 'hidden';
+      }
+
+      window.changeImage = function (e, dir) {
+        if (e) e.stopPropagation();
+        currentGalleryIndex += dir;
+
+        // Circular navigation
+        if (currentGalleryIndex < 0) currentGalleryIndex = galleryImages.length - 1;
+        if (currentGalleryIndex >= galleryImages.length) currentGalleryIndex = 0;
+
+        updateGalleryContent();
+      }
+
+      function updateGalleryContent() {
+        const src = galleryImages[currentGalleryIndex];
+        modalContent.innerHTML = `
+          <img src="${src}" alt="Gallery Image" style="max-height:85vh; max-width:100%; object-fit:contain;">
+          <button class="modal__nav modal__nav--prev" onclick="changeImage(event, -1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+          <button class="modal__nav modal__nav--next" onclick="changeImage(event, 1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        `;
+      }
+
+      window.closeModal = function () {
+        modalOverlay.classList.remove('active');
+        body.style.overflow = '';
+
+        setTimeout(() => {
+          modalContent.innerHTML = '';
+          modal.classList.remove('modal--image');
+          modalTitle.style.display = '';
+          modalDesc.style.display = '';
+        }, 300);
+      }
+
+      modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (!modalOverlay.classList.contains('active')) return;
+
+        if (e.key === 'Escape') closeModal();
+
+        if (modal.classList.contains('modal--image')) {
+          if (e.key === 'ArrowLeft') changeImage(null, -1);
+          if (e.key === 'ArrowRight') changeImage(null, 1);
+        }
+      });
+
+      // Make global functions available if needed by inline HTML (e.g. Services)
+      // window.openModal is already set above
+    });
+  </script>
